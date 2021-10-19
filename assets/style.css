@@ -75,6 +75,18 @@ button {
   display: none;
 }
 
+.hidden-question-3 {
+  display: none;
+}
+
+.hidden-question-4 {
+  display: none;
+}
+
+.hidden-question-5 {
+  display: none;
+}
+
 #present-question {
   display: flex;
   flex-direction: column;
@@ -103,4 +115,9 @@ div h1 {
 div h2 {
   font-size: 250%;
   background-color: lightseagreen;
+}
+
+span {
+  color: black;
+  font-size: 100%;
 }

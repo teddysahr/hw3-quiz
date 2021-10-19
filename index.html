@@ -10,8 +10,8 @@
   </head>
   <body>
     <header id="header">
-      <h2>HIGH SCORES</h2>
-      <h2>TIME:</h2>
+      <h2>SCORE: <span id="score"></span></h2>
+      <h2>TIME: <span id="time-remaining"></span></h2>
     </header>
     <main>
       <div class="container">
@@ -21,19 +21,43 @@
       </div>
       <div class="hidden-question-1">
         <h1>Question 1</h1>
-        <p>What is the best musical ever?</p>
-        <button id="wicked">A. Wicked</button>
-        <button class="wrong">B. Six</button>
-        <button class="wrong">C. Lion King</button>
-        <button class="wrong">D. Phantom</button>
+        <p>What does "CSS" stand for?</p>
+        <button id="CSS">A. Cascading Style Sheets</button>
+        <button class="wrong-answer-1">B. Computer Style Sorting</button>
+        <button class="wrong-answer-1">C. Console Selector String</button>
+        <button class="wrong-answer-1">D. Clock Server Software</button>
       </div>
       <div class="hidden-question-2">
         <h1>Question 2</h1>
-        <p>Who played elphaba?</p>
-        <button id="wicked">A. Idina</button>
-        <button class="wrong">B. Christin</button>
-        <button class="wrong">C. Kate</button>
-        <button class="wrong">D. Madeline</button>
+        <p>Which of these is not a semantic tag?</p>
+        <button class="wrong-answer-2">A. Main</button>
+        <button class="wrong-answer-2">B. Article</button>
+        <button id="Div">C. Div</button>
+        <button class="wrong-answer-2">D. Footer</button>
+      </div>
+      <div class="hidden-question-3">
+        <h1>Question 3</h1>
+        <p>What symbol(s) call a function in JavaScript?</p>
+        <button class="wrong-answer-3">A. []</button>
+        <button id="parentheses">B. ()</button>
+        <button class="wrong-answer-3">C. $</button>
+        <button class="wrong-answer-3">D. ::</button>
+      </div>
+      <div class="hidden-question-4">
+        <h1>Question 4</h1>
+        <p>How do you view your current directory in the terminal?</p>
+        <button class="wrong-answer-4">A. ls</button>
+        <button class="wrong-answer-4">B. cd</button>
+        <button class="wrong-answer-4">C. git status</button>
+        <button id="pwd">D. pwd</button>
+      </div>
+      <div class="hidden-question-5">
+        <h1>Question 5</h1>
+        <p>Who was the first operator in "The Matrix?"</p>
+        <button class="wrong-answer-5">A. Trinity</button>
+        <button id="tank">B. Tank</button>
+        <button class="wrong-answer-5">C. Cipher</button>
+        <button class="wrong-answer-5">D. Link</button>
       </div>
     </main>
     <script src="script.js"></script>

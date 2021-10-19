@@ -11,6 +11,17 @@ main {
   align-items: center;
 }
 
+button {
+  font: 150%;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: lightgray;
+  color: lightseagreen;
+  border-style: solid;
+  border-color: black;
+  color: black;
+}
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -77,4 +88,14 @@ main {
   flex-wrap: wrap;
   text-align: center;
   min-width: 500px;
+}
+
+div p {
+  font-size: 150%;
+  background-color: lightseagreen;
+}
+
+div h1 {
+  font-size: 250%;
+  background-color: lightseagreen;
 }

@@ -24,6 +24,7 @@ function moveToNextQuestion(x, y) {
 
 var count = 0;
 var countEl = document.querySelector("#score");
+var finalScore = document.querySelector("#final-score");
 
 function updatePointsDisplay() {
   countEl.textContent = count;
@@ -31,6 +32,10 @@ function updatePointsDisplay() {
 
 function scorePoints() {
   count++;
+}
+
+function displayFinalScore() {
+  finalScore.textContent = count - 1;
 }
 
 //Timer Function
@@ -68,19 +73,20 @@ startButton.addEventListener("click", function () {
 //question and answer variables
 var questionOne = document.querySelector(".hidden-question-1");
 var answerOne = document.querySelector("#CSS");
-var wrongAnswerOne = document.querySelector(".wrong-answer-1");
+var wrongAnswerOne = document.querySelectorAll(".wrong-answer-1");
 var questionTwo = document.querySelector(".hidden-question-2");
 var answerTwo = document.querySelector("#Div");
-var wrongAnswerTwo = document.querySelector(".wrong-answer-2");
+var wrongAnswerTwo = document.querySelectorAll(".wrong-answer-2");
 var questionThree = document.querySelector(".hidden-question-3");
 var answerThree = document.querySelector("#parentheses");
-var wrongAnswerThree = document.querySelector(".wrong-answer-3");
+var wrongAnswerThree = document.querySelectorAll(".wrong-answer-3");
 var questionFour = document.querySelector(".hidden-question-4");
 var answerFour = document.querySelector("#pwd");
-var wrongAnswerFour = document.querySelector(".wrong-answer-4");
+var wrongAnswerFour = document.querySelectorAll(".wrong-answer-4");
 var questionFive = document.querySelector(".hidden-question-5");
 var answerFive = document.querySelector("#tank");
-var wrongAnswerFive = document.querySelector(".wrong-answer-5");
+var wrongAnswerFive = document.querySelectorAll(".wrong-answer-5");
+var finalPage = document.querySelector(".score-page");
 
 //QUESTION ONE
 
@@ -142,12 +148,14 @@ wrongAnswerFour.addEventListener("click", function () {
 
 answerFive.addEventListener("click", function () {
   document.getElementById("present-question").appendChild(notifyCorrect);
-  moveToNextQuestion(questionFive);
+  moveToNextQuestion(questionFive, finalPage);
   updatePointsDisplay();
   scorePoints();
+  displayFinalScore();
 });
 
 wrongAnswerFive.addEventListener("click", function () {
   document.getElementById("present-question").appendChild(notifyWrong);
-  moveToNextQuestion(questionFive);
+  moveToNextQuestion(questionFive, finalPage);
+  displayFinalScore();
 });

@@ -102,6 +102,10 @@ button {
   min-width: 500px;
 }
 
+#present-question span {
+  background-color: lightseagreen;
+}
+
 div p {
   font-size: 150%;
   background-color: lightseagreen;
@@ -120,4 +124,8 @@ div h2 {
 span {
   color: black;
   font-size: 100%;
+}
+
+.score-page {
+  display: none;
 }

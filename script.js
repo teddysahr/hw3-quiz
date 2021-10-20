@@ -48,11 +48,18 @@ function gameTimer() {
     secondsLeft--;
     timerEl.textContent = secondsLeft;
     if (secondsLeft === 0) {
-      alert("YOU LOSE");
+      alert("TIME IS UP");
+      finalPage.setAttribute("id", "present-question");
+      removeCurrentPage.remove();
+      displayFinalScore();
       clearInterval(timeLeftInterval);
     }
   }, 1000);
 }
+
+//Go to final page variable
+
+var removeCurrentPage = document.querySelector("#main-pages");
 
 //BEGIN
 var startButton = document.querySelector("#start-button");
@@ -87,6 +94,11 @@ var questionFive = document.querySelector(".hidden-question-5");
 var answerFive = document.querySelector("#tank");
 var wrongAnswerFive = document.querySelectorAll(".wrong-answer-5");
 var finalPage = document.querySelector(".score-page");
+var leaderBoard = document.querySelector(".leader-board");
+var leaderBoardButton = document.querySelector(".leader-board-button");
+var restartButton = document.querySelector(".restart");
+var secondRestartButton = document.querySelector(".second-restart");
+var headerRemove = document.querySelector(".header");
 
 //QUESTION ONE
 
@@ -97,9 +109,12 @@ answerOne.addEventListener("click", function () {
   scorePoints();
 });
 
-wrongAnswerOne.addEventListener("click", function () {
-  document.getElementById("present-question").appendChild(notifyWrong);
-  moveToNextQuestion(questionOne, questionTwo);
+wrongAnswerOne.forEach((Element) => {
+  Element.addEventListener("click", (e) => {
+    console.log("hit");
+    document.getElementById("present-question").appendChild(notifyWrong);
+    moveToNextQuestion(questionOne, questionTwo);
+  });
 });
 
 //QUESTION TWO
@@ -111,9 +126,12 @@ answerTwo.addEventListener("click", function () {
   scorePoints();
 });
 
-wrongAnswerTwo.addEventListener("click", function () {
-  document.getElementById("present-question").appendChild(notifyWrong);
-  moveToNextQuestion(questionTwo, questionThree);
+wrongAnswerTwo.forEach((Element) => {
+  Element.addEventListener("click", (e) => {
+    console.log("hit");
+    document.getElementById("present-question").appendChild(notifyWrong);
+    moveToNextQuestion(questionTwo, questionThree);
+  });
 });
 
 //QUESTION THREE
@@ -125,9 +143,12 @@ answerThree.addEventListener("click", function () {
   scorePoints();
 });
 
-wrongAnswerThree.addEventListener("click", function () {
-  document.getElementById("present-question").appendChild(notifyWrong);
-  moveToNextQuestion(questionThree, questionFour);
+wrongAnswerThree.forEach((Element) => {
+  Element.addEventListener("click", (e) => {
+    console.log("hit");
+    document.getElementById("present-question").appendChild(notifyWrong);
+    moveToNextQuestion(questionThree, questionFour);
+  });
 });
 
 //QUESTION FOUR
@@ -139,9 +160,12 @@ answerFour.addEventListener("click", function () {
   scorePoints();
 });
 
-wrongAnswerFour.addEventListener("click", function () {
-  document.getElementById("present-question").appendChild(notifyWrong);
-  moveToNextQuestion(questionFour, questionFive);
+wrongAnswerFour.forEach((Element) => {
+  Element.addEventListener("click", (e) => {
+    console.log("hit");
+    document.getElementById("present-question").appendChild(notifyWrong);
+    moveToNextQuestion(questionFour, questionFive);
+  });
 });
 
 //QUESTION FIVE
@@ -154,8 +178,23 @@ answerFive.addEventListener("click", function () {
   displayFinalScore();
 });
 
-wrongAnswerFive.addEventListener("click", function () {
-  document.getElementById("present-question").appendChild(notifyWrong);
-  moveToNextQuestion(questionFive, finalPage);
-  displayFinalScore();
+wrongAnswerFive.forEach((Element) => {
+  Element.addEventListener("click", (e) => {
+    console.log("hit");
+    document.getElementById("present-question").appendChild(notifyWrong);
+    moveToNextQuestion(questionFive, finalPage);
+    displayFinalScore();
+  });
+});
+
+leaderBoardButton.addEventListener("click", function () {
+  moveToNextQuestion(finalPage, leaderBoard);
+});
+
+restartButton.addEventListener("click", function () {
+  location.reload();
+});
+
+secondRestartButton.addEventListener("click", function () {
+  location.reload();
 });

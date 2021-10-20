@@ -13,13 +13,13 @@
       <h2>SCORE: <span id="score"></span></h2>
       <h2>TIME: <span id="time-remaining"></span></h2>
     </header>
-    <main>
+    <main id="main-pages">
       <div class="container">
         <h1>CODE QUIZ CHALLENGE</h1>
         <p>This is a quiz. See how well you do!</p>
         <button id="start-button">START</button>
       </div>
-      <div class="hidden-question-1">
+      <div class="hidden-question-1" class="page">
         <h1>Question 1</h1>
         <p>What does "CSS" stand for?</p>
         <button id="CSS">A. Cascading Style Sheets</button>
@@ -27,7 +27,7 @@
         <button class="wrong-answer-1">C. Console Selector String</button>
         <button class="wrong-answer-1">D. Clock Server Software</button>
       </div>
-      <div class="hidden-question-2">
+      <div class="hidden-question-2" class="page">
         <h1>Question 2</h1>
         <p>Which of these is not a semantic tag?</p>
         <button class="wrong-answer-2">A. Main</button>
@@ -35,7 +35,7 @@
         <button id="Div">C. Div</button>
         <button class="wrong-answer-2">D. Footer</button>
       </div>
-      <div class="hidden-question-3">
+      <div class="hidden-question-3" class="page">
         <h1>Question 3</h1>
         <p>What symbol(s) call a function in JavaScript?</p>
         <button class="wrong-answer-3">A. []</button>
@@ -43,7 +43,7 @@
         <button class="wrong-answer-3">C. $</button>
         <button class="wrong-answer-3">D. ::</button>
       </div>
-      <div class="hidden-question-4">
+      <div class="hidden-question-4" class="page">
         <h1>Question 4</h1>
         <p>How do you view your current directory in the terminal?</p>
         <button class="wrong-answer-4">A. ls</button>
@@ -51,7 +51,7 @@
         <button class="wrong-answer-4">C. git status</button>
         <button id="pwd">D. pwd</button>
       </div>
-      <div class="hidden-question-5">
+      <div class="hidden-question-5" class="page">
         <h1>Question 5</h1>
         <p>Who was the first operator in "The Matrix?"</p>
         <button class="wrong-answer-5">A. Trinity</button>
@@ -59,21 +59,27 @@
         <button class="wrong-answer-5">C. Cipher</button>
         <button class="wrong-answer-5">D. Link</button>
       </div>
-      <div class="score-page">
-        <h2>FINAL SCORE: <span id="final-score"></span></h2>
-        <p>Enter your final score!</p>
-        <form method="POST">
-          <div class="input-group">
-            <input
-              type="text"
-              name="initials"
-              id="initials"
-              placeholder="Your Initials"
-            />
-          </div>
-        </form>
-      </div>
     </main>
+    <div class="score-page">
+      <h2>FINAL SCORE: <span id="final-score"></span></h2>
+      <p>Post your score below!</p>
+      <form method="POST">
+        <div class="input-group">
+          <input
+            type="text"
+            name="initials"
+            id="initials"
+            placeholder="Your Initials"
+          />
+        </div>
+      </form>
+      <button class="restart">RESTART</button>
+      <button class="leader-board-button">LEADER BOARD</button>
+    </div>
+    <div class="leader-board">
+      <h1>TOP SCORES</h1>
+      <button class="second-restart">RESTART</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
